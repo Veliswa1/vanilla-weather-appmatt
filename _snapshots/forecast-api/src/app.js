@@ -51,6 +51,9 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+// in this function, we create a Url of this new API, we are sending it the co-ordinates with the latitude and the longitude, we are also giving the the API Key, and the units of metric
+// Then we say to axios,to go get the API Url, once you got it, then displayFocust.
+//It will go to the function displayFocust(), and log a rsponse
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -81,7 +84,9 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
+  
+//  Inside the displayTemperature, go and get the focust and i am going to give you the co-ordinates, only when you get the response from the API,then show the response from the current city 
+  
   getForecast(response.data.coord);
 }
 
